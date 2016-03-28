@@ -1,0 +1,269 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C0F1888B-4532-4489-9F0E-C02CDFDF5829}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Flashcards</RootNamespace>
+    <AssemblyName>Flashcards</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Classes\CardComparer.cs" />
+    <Compile Include="Classes\CardHandling.cs" />
+    <Compile Include="Classes\DatabaseInteraction OBSOLATE.cs" />
+    <Compile Include="Classes\DataManagement.cs" />
+    <Compile Include="Classes\StringBuilderExtended.cs" />
+    <Compile Include="DataTyps\Article.cs" />
+    <Compile Include="DataTyps\Card.cs" />
+    <Compile Include="DataTyps\CardRun.cs" />
+    <Compile Include="DataTyps\Category.cs" />
+    <Compile Include="DataTyps\DirectoryTree.cs" />
+    <Compile Include="DataTyps\EnumCardGrading.cs" />
+    <Compile Include="DataTyps\EnumCardSide.cs" />
+    <Compile Include="Classes\ExceptionHandling.cs" />
+    <Compile Include="Classes\FileManagement.cs" />
+    <Compile Include="Classes\ImageHandling.cs" />
+    <Compile Include="P_Articles.xaml.cs">
+      <DependentUpon>P_Articles.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="P_CardBack.xaml.cs">
+      <DependentUpon>P_CardBack.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="P_CardFront.xaml.cs">
+      <DependentUpon>P_CardFront.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="P_CardSelection.xaml.cs">
+      <DependentUpon>P_CardSelection.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="P_CardStack.xaml.cs">
+      <DependentUpon>P_CardStack.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="P_NewArticle.xaml.cs">
+      <DependentUpon>P_NewArticle.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="P_NewCard.xaml.cs">
+      <DependentUpon>P_NewCard.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="P_NewPage.xaml.cs">
+      <DependentUpon>P_NewPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="P_Page.xaml.cs">
+      <DependentUpon>P_Page.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="P_Result.xaml.cs">
+      <DependentUpon>P_Result.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="P_Source.xaml.cs">
+      <DependentUpon>P_Source.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Steuerelemente\AddImageControl.xaml.cs">
+      <DependentUpon>AddImageControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Steuerelemente\AddTextControl.xaml.cs">
+      <DependentUpon>AddTextControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Steuerelemente\CardControl.xaml.cs">
+      <DependentUpon>CardControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Steuerelemente\CategoryBanner.xaml.cs">
+      <DependentUpon>CategoryBanner.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Steuerelemente\FlashcardControl.xaml.cs">
+      <DependentUpon>FlashcardControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Steuerelemente\HeadlineControl.xaml.cs">
+      <DependentUpon>HeadlineControl.xaml</DependentUpon>
+    </Compile>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="NewSubject.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="P_Articles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="P_CardBack.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="P_CardFront.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="P_CardSelection.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="P_CardStack.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="P_NewArticle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="P_NewCard.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="P_NewPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="P_Page.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="P_Result.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="P_Source.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Steuerelemente\AddImageControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Steuerelemente\AddTextControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Steuerelemente\CardControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Steuerelemente\CategoryBanner.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Steuerelemente\FlashcardControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Steuerelemente\HeadlineControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="NewSubject.xaml.cs">
+      <DependentUpon>NewSubject.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\LogoIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Views\ArticleViews\" />
+    <Folder Include="Views\CardViews\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\article.png" />
+    <Resource Include="Icons\article0.png" />
+    <Resource Include="Icons\bin.png" />
+    <Resource Include="Icons\bin0.png" />
+    <Resource Include="Icons\Card.png" />
+    <Resource Include="Icons\Card0.png" />
+    <Resource Include="Icons\edit.png" />
+    <Resource Include="Icons\edit0.png" />
+    <Resource Include="Icons\Turn.png" />
+    <Resource Include="Icons\Turn0.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

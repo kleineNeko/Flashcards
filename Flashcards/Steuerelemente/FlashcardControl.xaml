@@ -1,0 +1,21 @@
+﻿<UserControl x:Class="Flashcards.Steuerelemente.FlashcardControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Flashcards.Steuerelemente"
+             mc:Ignorable="d" 
+             d:DesignHeight="250" d:DesignWidth="400">
+    <UserControl.Resources>
+        <Style TargetType="UserControl">
+            <Setter Property="Background" Value="{StaticResource DefaultPaperColor}"/>
+            <Setter Property="BorderBrush" Value="Black"/>
+            <Setter Property="BorderThickness" Value="1"/>
+        </Style>
+    </UserControl.Resources>
+    <StackPanel Name="g_CardContent">
+        <Line Stroke="{StaticResource DefaultRed}" StrokeThickness="2" Margin="0,40,0,0" X1="0" X2="400" Visibility="Visible"/>
+        <DockPanel Margin="0,10,0,0" Width="390" Height="180" Name="dp_Content">
+        </DockPanel>
+    </StackPanel>
+</UserControl>

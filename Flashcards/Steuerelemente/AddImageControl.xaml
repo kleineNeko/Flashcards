@@ -1,0 +1,25 @@
+﻿<UserControl x:Class="Flashcards.Steuerelemente.AddImageControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Flashcards.Steuerelemente"
+             mc:Ignorable="d" 
+             d:DesignHeight="220" d:DesignWidth="500">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Image Height="200" Width="200" Name="img"></Image>
+        <StackPanel Grid.Column="1" Margin="0,10">
+            <Button  Background="#FF4D0111" Foreground="#FFFBEFDA" Margin="10,10" Height="25">Hinzufügen</Button>
+            <Label Margin="10,10">Orientireung des Bildes:</Label>
+            <RadioButton Name="rb_left" Margin="10,2">links</RadioButton>
+            <RadioButton Name="rb_right" Margin="10,2">rechts</RadioButton>
+            <RadioButton Name="rb_center" Margin="10,2">zentriert</RadioButton>
+        </StackPanel>
+        
+    </Grid>
+</UserControl>

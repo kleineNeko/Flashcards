@@ -1,0 +1,45 @@
+﻿<UserControl x:Class="Flashcards.Steuerelemente.CategoryBanner"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Flashcards.Steuerelemente"
+             mc:Ignorable="d" 
+             d:DesignHeight="100" d:DesignWidth="600" FontFamily="{StaticResource DefaultFont}">
+    
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition Width="35"></ColumnDefinition>
+            <ColumnDefinition Width="35"></ColumnDefinition>
+            <ColumnDefinition Width="35"></ColumnDefinition>
+            <ColumnDefinition Width="35"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Image Height="80" Width="80" Name="img"></Image>
+        <Label Grid.Column="1" VerticalAlignment="Center" Name="name"></Label>
+        <Button Style="{StaticResource DefaultButton}" Grid.Column="2" Height="25" Margin="10" Name="btnStart" ToolTip="Karteikarten Übung starten" Click="btnStart_Click">Start</Button>
+        <Button Style="{StaticResource DefaultButton}" Grid.Column="3" Height="25" Width="25" Name="btnEdit"  Click="btnEdit_Click" ToolTip="Kategorie Bearbeiten">
+            <Button.Content>
+                <Image Height="20" Width="20" Source="../Icons/edit.png"/>
+            </Button.Content>
+        </Button>
+        <Button Style="{StaticResource DefaultButton}" Grid.Column="4" Height="25" Width="25" Name="btnCards" ToolTip="Zu den Karteikarten" Click="btnCards_Click">
+            <Button.Content>
+                <Image Height="20" Width="20" Source="../Icons/Card0.png"/>
+            </Button.Content>
+        </Button>
+        <Button Style="{StaticResource DefaultButton}" Grid.Column="5" Height="25" Width="25" Name="btnArticles" ToolTip="Zu den Artikeln" Click="btnArticles_Click">
+            <Button.Content>
+                <Image Name="img_article" Height="20" Width="20" Source="../Icons/article.png" IsMouseDirectlyOverChanged="btnArticle_MouseOver"/>
+            </Button.Content>
+        </Button>
+        <Button Style="{StaticResource DefaultButton}" Grid.Column="6" Height="25" Width="25" Name="btnDelete" Click="btnDelete_Click" ToolTip="Kategorie löschen">
+            <Button.Content>
+                <Image Height="20" Width="20" Source="../Icons/bin.png"/>
+            </Button.Content>
+        </Button>
+    </Grid>
+</UserControl>

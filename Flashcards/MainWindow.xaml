@@ -1,0 +1,24 @@
+﻿<Window x:Class="Flashcards.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Karteisystem" Height="900" Width="1200" Icon="Icons/LogoIcon.png" Background="{StaticResource TableColor}" >
+    
+    <Window.Resources>
+
+
+    </Window.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition ></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="10*"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Frame Grid.Row="1" Height="Auto" Name="f_content" NavigationUIVisibility="Hidden" Margin="150,0" Background="{StaticResource DefaultPaperColor}" FontFamily="{StaticResource DefaultFont}">            
+        </Frame>
+        <StackPanel Grid.Column="0">
+        </StackPanel>
+    </Grid>
+</Window>

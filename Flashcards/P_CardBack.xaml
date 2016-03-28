@@ -1,0 +1,55 @@
+﻿<Page x:Class="Flashcards.P_CardBack"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" 
+      d:DesignHeight="700" d:DesignWidth="700"
+      ShowsNavigationUI="False"
+	Title="P_CardBack">
+    <DockPanel>
+        <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" Height="40">
+            <Button Style="{StaticResource DefaultButton}" Name="btn_EditCard" Height="25" Width="25" Margin="10,8,10,0" ToolTip="Aktuelle Karte bearbeiten" Click="Edit_Click" VerticalAlignment="Top">
+                <Button.Content>
+                    <Image Height="20" Width="20" Source="../Flashcards/Icons/edit.png" />
+                </Button.Content>
+            </Button>
+            <Button Style="{StaticResource DefaultButton}" Name="btn_DeleteCard" Height="25" Width="25">
+                <Button.Content>
+                    <Image Height="20" Width="20" Source="../Flashcards/Icons/bin.png"/>
+                </Button.Content>
+            </Button>
+        </StackPanel>
+
+        <Grid DockPanel.Dock="Top" Margin="0,30,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <StackPanel Grid.Column="0" Name="sp_cards" Height="300" HorizontalAlignment="Center" VerticalAlignment="Center">
+                
+            </StackPanel>
+
+            <StackPanel Grid.Column="1">
+                <CheckBox Name="chb_success" Margin="0,70,0,0" Click="chbSuccess_Cklicked">Geschafft</CheckBox>
+                <RadioButton GroupName="grp_success" Name="rb_easy" Margin="20,5,0,0" Click="rbEasy_Click">leicht</RadioButton>
+                <RadioButton GroupName="grp_success" Name="rb_normal" Margin="20,5,0,0" Click="rbNormal_Click">okay</RadioButton>
+                <RadioButton GroupName="grp_success" Name="rb_hard" Margin="20,5,0,5" Click="rbHard_Click">schwer</RadioButton>
+                <CheckBox Name="failed" Click="chxFailed_Clicked">Nicht geschafft</CheckBox>
+            </StackPanel>
+        </Grid>
+
+
+        <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,20,0,0">
+            <Button Style="{StaticResource DefaultButton}" Name="cancel" Height="25" Width="100" Padding="10,0,10,0" Click="cancel_Click">Abbrechen</Button>
+            <Button Style="{StaticResource DefaultButton}" Name="next" Height="25" Width="100" Margin="10,0,50,0" Padding="10,0,10,0" Click="next_Click">Weiter</Button>
+        </StackPanel>
+        <ScrollViewer Name="scr_Viewer" Visibility="Hidden">
+            <Frame Name="f_page" >
+
+            </Frame>
+        </ScrollViewer>
+
+    </DockPanel>
+</Page>
