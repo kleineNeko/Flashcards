@@ -156,6 +156,7 @@ namespace Flashcards.DataTyps
                             if (item.StartsWith(DataManagement.RootDirectory + "\\" + id + "\\" + id + "."))
                             {
                                 element.Attribute("Image").Value = "";
+                                File.Delete(item);
                                 break;
                             }
                         }

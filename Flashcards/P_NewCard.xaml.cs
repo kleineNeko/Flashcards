@@ -130,13 +130,13 @@ namespace Flashcards
 
         private void resetImgB_Click(object sender, RoutedEventArgs e)
         {
-            NewCard.ImageForBack = null;
+            NewCard.ImageForBack = "";
             imgB.Source = null;
         }
 
         private void resetImgF_Click(object sender, RoutedEventArgs e)
         {
-            NewCard.ImageForFront = null;
+            NewCard.ImageForFront = "";
             imgF.Source = null;
         }
 

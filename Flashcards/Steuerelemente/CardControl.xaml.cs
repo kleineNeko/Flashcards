@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Media.Imaging;
 using Flashcards.DataTyps;
 
 namespace Flashcards.Steuerelemente
@@ -95,6 +94,7 @@ namespace Flashcards.Steuerelemente
             TB.Margin = new Thickness(20);
             TB.TextWrapping = TextWrapping.Wrap;
             TB.TextTrimming = TextTrimming.CharacterEllipsis;
+            TB.FontSize = 10;
             TB.Text = (Side == EnumCardSide.Front) ? CurrentCard.Question : CurrentCard.Answer;
 
             sp_card.Children.Add(TB);
@@ -113,6 +113,7 @@ namespace Flashcards.Steuerelemente
             TB.Width = 120;
             TB.TextWrapping = TextWrapping.Wrap;
             TB.TextTrimming = TextTrimming.CharacterEllipsis;
+            TB.FontSize = 10;
             TB.Text = (Side == EnumCardSide.Front) ? CurrentCard.Question : CurrentCard.Answer;
 
             sp_card.Children.Add(IMG);
@@ -169,7 +170,9 @@ namespace Flashcards.Steuerelemente
 
         private void DeleteButton_Click(object sender, RoutedEventArgs e)
         {
-
+            //event werfen
+            //Sender == auslösende Karte im auffangenden Event Löschung vornehmen //Ressourcenfreigabe Problem
+            //Card.DeleteCard(CurrentCard.Id, CategoryId);
         }
     }
 }

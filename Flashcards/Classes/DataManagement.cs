@@ -4,9 +4,7 @@ using System.Xml.Linq;
 
 namespace Flashcards.Classes
 {
-    //public static string DirectoryRoot;
-
-    //neue klasse die sich darum kümmert das ordner uns speicherdaten angelegt werden
+    //Kümmert sich darum dass Ordner uns Speicherdaten angelegt werden
     public class DataManagement
     {
 
@@ -19,8 +17,15 @@ namespace Flashcards.Classes
             }
         }
 
+        /// <summary>
+        /// Prüft ob der Ordner für die Kategorien und damit Karten & Artikel vorhanden ist und ob es eine entsprechende
+        /// Verzeichnisdatei gibt. Fehlt etwas wird es neu angelegt.
+        /// </summary>
+        /// <returns>gibt an ob Ordner und Verzeichnisdatei vorhanden sind</returns>
         public static bool MainFolder()
         {
+            bool stableSetup = false;
+
             var dir = Directory.GetCurrentDirectory();
             string path = dir +@"\data";
             bool exisits = Directory.Exists(path);
@@ -29,18 +34,24 @@ namespace Flashcards.Classes
                 Directory.CreateDirectory(path);
                 RootDirectory = path;
                 AddCategoryFile();
-                if(Directory.Exists(path))
-                    return true;
+                if (Directory.Exists(path))
+                {
+                    stableSetup = true;
+                }
             }
             else
             {
                 RootDirectory = path;
-                return true;
-            }
+                CheckForCategoryFile();
+                stableSetup = true;
+            }            
 
-            return false;
+            return stableSetup;
         }
 
+        /// <summary>
+        /// Erstellt eine Verzeichnisdatei für die Kategorien
+        /// </summary>
         private static void AddCategoryFile()
         {
             string fileName = RootDirectory + "\\categories.xml";
@@ -60,6 +71,19 @@ namespace Flashcards.Classes
                 entry.Append(item + " ");
             }
             return entry.ToString().Trim();
+        }
+
+        /// <summary>
+        /// Überprüft ob die Verzeichnisdatei für die Kategorien im Erwarteten Verzeichnis liegt,
+        /// wenn nicht wird sie angelegt
+        /// </summary>
+        private static void CheckForCategoryFile()
+        {
+            var exists = File.Exists(CategoryFile);
+            if (!exists)
+            {
+                AddCategoryFile();
+            }
         }
     }
 }

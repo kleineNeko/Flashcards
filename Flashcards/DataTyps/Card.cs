@@ -153,7 +153,39 @@ namespace Flashcards.DataTyps
             }
             return items;
         }
+        
+        public static void DeleteCard(string cardId, string categoryId)
+        {
+            XDocument doc = XDocument.Load(DataManagement.RootDirectory+"\\"+categoryId+ "\\cards.xml");
+            var item = doc.Element("Cards").Elements("Card").Where(x => x.Attribute("Key").Value == cardId);
 
+            //zur Karte gespeicherte Bilddateien löschen
+            var frontImage = item.First().Element("Question").Attribute("Image").Value.ToString();
+            var backImage = item.First().Element("Answer").Attribute("Image").Value.ToString();
+            DeleteFrontAndBackImage(frontImage, backImage);
+
+            item.Remove();
+            doc.Save(DataManagement.RootDirectory + "\\" + categoryId + "\\cards.xml");
+        }
+
+        /// <summary>
+        /// Löscht Bilder die den Fragen/Antworten einer Karte zugeordnet wurden.
+        /// Prüft ob ein solches Bild angegeben wurden
+        /// </summary>
+        /// <param name="front">Pfadangabe zum Bild für die Frageseite</param>
+        /// <param name="back">Pfadangabe zum Bild für die Antwortseite</param>
+        private static void DeleteFrontAndBackImage(string front, string back)
+        {
+            if (!String.IsNullOrWhiteSpace(front))
+            {
+                File.Delete(front);
+            }
+
+            if (!String.IsNullOrWhiteSpace(back))
+            {
+                File.Delete(back);
+            }
+        }
         
         public bool UpdateCard(string subjectId)
         {

@@ -38,7 +38,7 @@ namespace Flashcards
             InitializeComponent();
             MainPage = page;
             Original = category;
-            Category.ImagePath = "";
+            Category.ImagePath = category.ImagePath;
 
             ShowImage(category.ImagePath);
             name.Text = category.Name;
